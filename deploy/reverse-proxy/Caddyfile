@@ -1,0 +1,5 @@
+# Pocket Fitness behind Caddy. Homepage widgets and linked apps send their own
+# bearer token to /api/*.
+fitness.example.com {
+	reverse_proxy pocket-fitness:8080
+}

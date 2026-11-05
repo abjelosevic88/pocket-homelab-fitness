@@ -1,0 +1,23 @@
+[Unit]
+Description=Pocket Fitness — your training log
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+User=pocket-fitness
+Group=pocket-fitness
+ExecStart=/usr/local/bin/pocket-fitness
+Environment=DATA_DIR=/var/lib/pocket-fitness
+Environment=PORT=8080
+Environment=BASE_URL=https://fitness.example.com
+Environment=SECURE_COOKIES=true
+Restart=on-failure
+RestartSec=3
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/pocket-fitness
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target
