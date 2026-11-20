@@ -64,6 +64,7 @@ It answers like finishing a workout: `{workout, exercises, records: [{exercise, 
 | `POST /ai/parse` | `{"text": "bench 3x8 at 80, then pull-ups"}` → a draft for `POST /workouts/log`, nothing saved |
 | `POST /import[?unit=lb]` | the body is a Strong CSV, a Hevy CSV or a Pocket Fitness `.json` export; importing twice adds nothing |
 | `GET /export.json`, `GET /export.csv` | everything / every set (Hevy's columns) |
+| `GET /pocket/portable` | Pocket Move can copy your training out and bring it in: the two exports under the link scope `move:export`, `POST /import` (JSON or a Strong/Hevy CSV) under `move:import` |
 | `GET /backup` | the whole database (admins) |
 
 ## Events (Pocket Core bus)
